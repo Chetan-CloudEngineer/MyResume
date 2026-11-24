@@ -322,8 +322,14 @@ dd{overflow-wrap:anywhere;min-width:0}
 .js .cmesh.in .b{opacity:1;transform:none;transition:opacity .5s ease,transform .6s cubic-bezier(.2,.8,.3,1.2);transition-delay:calc(var(--k,0)*.1s)}
 .js .cmesh .ln2{opacity:0}
 .js .cmesh.in .ln2{opacity:1;transition:opacity .9s ease .2s}
-@media(min-width:761px){.certs{display:none}}
+/* Education and certification cards remain visible on desktop and mobile. */
 @media(max-width:760px){.cmesh{display:none}}
+/* Ensure Education & Certifications cards are visible at every screen size. */
+#credentials .certs{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;width:100%;}
+#credentials .cert{display:flex!important;visibility:visible!important;opacity:1!important;min-height:150px;}
+#credentials .cert h4,#credentials .cert p,#credentials .cert a{visibility:visible!important;opacity:1!important;}
+@media(max-width:600px){#credentials .certs{grid-template-columns:minmax(0,1fr)}}
+
 /* ---- contact ---- */
 #contact.pg{padding:0 3vw}
 .ct-hero{min-height:calc(100vh - 76px);max-width:1200px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:70px 0 40px}
